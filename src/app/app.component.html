@@ -5,7 +5,7 @@
 
 <div *ngIf="selectedHero">
     <h2> details!</h2>
-    <div><label>id: </label></div>
+    <div><label>id: </label>{{selectedHero.id}}</div>
     <div>
         <label>name: </label>
         <input [(ngModel)]="selectedHero.name" placeholder="name" />
@@ -19,7 +19,7 @@
             *ngFor="let hero of heroes"
             (click)="onSelect(hero)"
             [class.selected]="hero === selectedHero">
-            <span class="badge"></span>
+            <span class="badge">{{hero.id}}</span> {{hero.name}}
         </li>
     </ul>
 </div>
